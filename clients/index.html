@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fighting Game</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <canvas id="canvas"
+            >Your browser does not support the canvas element.</canvas
+        >
+        <img id="fighter1_idle" src="/assets/samuraiMack/Idle.png" hidden />
+        <img
+            id="fighter1_run"
+            src="/assets/samuraiMack/Run.png"
+            alt=""
+            hidden
+        />
+        <img id="fighter1_jump" src="/assets/samuraiMack/Jump.png" hidden />
+        <img id="fighter1_fall" src="/assets/samuraiMack/Fall.png" hidden />
+        <img id="fighter1_atk1" src="/assets/samuraiMack/Attack1.png" hidden />
+        <img id="fighter1_atk2" src="/assets/samuraiMack/Attack2.png" hidden />
+        <img
+            id="fighter1_take_hit"
+            src="/assets/samuraiMack/Take Hit.png"
+            hidden
+        />
+        <img id="fighter1_death" src="/assets/samuraiMack/Death.png" hidden />
+
+        <img id="fighter2_idle" src="/assets/kenji/Idle.png" hidden />
+        <img id="fighter2_run" src="/assets/kenji/Run.png" alt="" hidden />
+        <img id="fighter2_jump" src="/assets/kenji/Jump.png" hidden />
+        <img id="fighter2_fall" src="/assets/kenji/Fall.png" hidden />
+        <img id="fighter2_atk1" src="/assets/kenji/Attack1.png" hidden />
+        <img id="fighter2_atk2" src="/assets/kenji/Attack2.png" hidden />
+        <img id="fighter2_take_hit" src="/assets/kenji/Take hit.png" hidden />
+        <img id="fighter2_death" src="/assets/kenji/Death.png" hidden />
+        <img id="bg" src="/assets/background.png" hidden />
+        <img id="shop" src="/assets/shop.png" hidden />
+        <audio id="audio" src="/assets/Title_Screen.wav"></audio>
+
+        <div id="roomid"></div>
+        <div id="p1"></div>
+        <div id="p2"></div>
+
+        <button
+            id="fullscreen"
+            style="
+                outline: none;
+                border: none;
+                padding: 16px 20px;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: 600;
+                background: #5192ed;
+                color: #fff;
+            "
+        >
+            Full screen
+        </button>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="module" src="./Game.js"></script>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <title>control</title>
+    </head>
+    <body>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                /* -moz-user-select: none !important;
+                -webkit-touch-callout: none !important;
+                -webkit-user-select: none !important;
+                -khtml-user-select: none !important;
+                -moz-user-select: none !important;
+                -ms-user-select: none !important;
+                user-select: none !important; */
+            }
+
+            #wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px;
+                min-width: 100vw;
+                min-height: 80vh;
+            }
+            button {
+                outline: none;
+                border: none;
+                padding: 25px;
+                border-radius: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                background: #0284c7;
+                color: #fff;
+            }
+
+            #control {
+                padding: 10px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+
+            #up {
+                grid-column-start: 2;
+            }
+            #left {
+                grid-column-start: 1;
+                grid-row-start: 2;
+            }
+            #right {
+                grid-column-start: 3;
+                grid-row-start: 2;
+            }
+            #down {
+                grid-row-start: 3;
+                grid-column-start: 2;
+            }
+
+            #atk {
+                border-radius: 1000px;
+                min-width: 150px;
+                min-height: 150px;
+            }
+        </style>
+
+        <div id="wrapper">
+            <div id="control">
+                <button id="up">
+                    <ion-icon name="arrow-up-outline"></ion-icon>
+                </button>
+                <button id="down">
+                    <ion-icon name="arrow-down-outline"></ion-icon>
+                </button>
+                <button id="left">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                </button>
+                <button id="right">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
+            </div>
+            <button id="atk" style="font-size: 50px"><div>🐼</div></button>
+        </div>
+        <form
+            id="form"
+            style="
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                gap: 10px;
+            "
+        >
+            <input
+                type="text"
+                placeholder="#"
+                id="input"
+                autocomplete="off"
+                style="padding: 10px 20px"
+            />
+            <select id="playerName">
+                <option value="player1">Player 1</option>
+                <option value="player2">Player 2</option>
+            </select>
+            <button
+                type="submit"
+                style="
+                    padding: 10px 20px;
+                    background-color: #52aad6;
+                    color: white;
+                "
+            >
+                Join
+            </button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./controlClient.js"></script>
+    </body>
+</html>
